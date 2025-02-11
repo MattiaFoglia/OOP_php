@@ -1,4 +1,6 @@
 <?php
+header("Content-Type: application/json");
+
 require_once "Alunno.php";
 
 $studenti = [
@@ -8,7 +10,5 @@ $studenti = [
     new Alunno("d","h",4),
 ];
 
-foreach($studenti as $alunno){
-    $alunno->stampaAlunno();
-}
+echo json_encode($studenti);
 ?>

@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: application/json");
 require_once "Veicolo.php";
 require_once "Automobile.php";
 
@@ -7,7 +8,5 @@ $automobili = [
     new Automobile("b",2,"f")
 ];
 
-foreach($automobili as $car){
-    $car->stampaVeicolo();
-}
+echo json_encode($automobili);
 ?>

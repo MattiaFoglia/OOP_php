@@ -1,5 +1,5 @@
 <?php
-class Veicolo {
+class Veicolo implements JsonSerializable{
   protected $brand;
   protected $year;
 
@@ -7,7 +7,11 @@ class Veicolo {
     $this->brand = $brand;
     $this->year = $year;
   } 
-
+  public function jsonSerialize(): array {
+    return [ 'Brand' => $this->brand,
+    'Year' => $this->year
+  ];
+  }
   public function get_brand() {
     return $this->brand;
   }

@@ -8,7 +8,14 @@ class Automobile extends Veicolo{
     $this->year = $year;
     $this->type = $type;
   } 
-    
+  
+  #[\Override]
+  public function jsonSerialize(): array {
+    return [ 'Brand' => $this->brand,
+    'Year' => $this->year,
+    'type' => $this->type
+  ];
+}
   public function get_type() {
     return $this->type;
   }
